@@ -1,5 +1,5 @@
-var definePropertyOf = require('@dmail/object-define/definePropertyOf');
-var clonePropertyOf = require('@dmail/object-clone/clonePropertyOf');
+var definePropertyOf = include('dmail/object-define/definePropertyOf');
+var clonePropertyOf = include('dmail/object-clone/clonePropertyOf');
 var getValue;
 
 if( 'getOwnPropertyDescriptor' in Object ){
@@ -59,5 +59,6 @@ function mergePropertiesOf(target, source, names){
 	return target;
 }
 
-module.exports = mergePropertiesOf;
 Object.merge = mergePropertiesOf;
+
+return mergePropertiesOf;
